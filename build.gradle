@@ -19,7 +19,3 @@ allprojects {
 task wrapper(type: Wrapper) {
     gradleVersion = '4.0.1'
 }
-
-dependencies {
-    compile 'com.github.wakwak3125:uPhyca:stetho-realm:2.1.1'
-}
