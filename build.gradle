@@ -12,9 +12,14 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.0.1'
+}
+
+dependencies {
+    compile 'com.github.wakwak3125:uPhyca:stetho-realm:2.0.1'
 }
