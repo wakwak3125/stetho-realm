@@ -1,24 +1,22 @@
 package com.uphyca.stetho_realm;
 
 import android.database.sqlite.SQLiteException;
-
 import com.facebook.stetho.inspector.helper.ChromePeerManager;
 import com.facebook.stetho.inspector.helper.PeerRegistrationListener;
 import com.facebook.stetho.inspector.jsonrpc.JsonRpcPeer;
+import io.realm.RealmConfiguration;
+import io.realm.exceptions.RealmError;
+import io.realm.internal.OsRealmConfig;
+import io.realm.internal.SharedRealm;
+import io.realm.internal.Table;
 
+import javax.annotation.Nullable;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.annotation.Nullable;
-
-import io.realm.RealmConfiguration;
-import io.realm.exceptions.RealmError;
-import io.realm.internal.SharedRealm;
-import io.realm.internal.Table;
 
 
 public class RealmPeerManager extends ChromePeerManager {
@@ -130,7 +128,7 @@ public class RealmPeerManager extends ChromePeerManager {
     }
 
     private SharedRealm openSharedRealm(String databaseId,
-            @Nullable SharedRealm.Durability durability) {
+            @Nullable OsRealmConfig.Durability durability) {
         final byte[] encryptionKey = getEncryptionKey(databaseId);
 
         final RealmConfiguration.Builder builder = new RealmConfiguration.Builder();
@@ -138,7 +136,7 @@ public class RealmPeerManager extends ChromePeerManager {
         builder.directory(databaseFile.getParentFile());
         builder.name(databaseFile.getName());
 
-        if (durability == SharedRealm.Durability.MEM_ONLY) {
+        if (durability == OsRealmConfig.Durability.MEM_ONLY) {
             builder.inMemory();
         }
         if (encryptionKey != null) {
