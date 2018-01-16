@@ -21,5 +21,5 @@ task wrapper(type: Wrapper) {
 }
 
 dependencies {
-    compile 'com.github.wakwak3125:uPhyca:stetho-realm:2.0.1'
+    compile 'com.github.wakwak3125:uPhyca:stetho-realm:2.1.1'
 }
