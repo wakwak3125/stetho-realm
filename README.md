@@ -10,18 +10,16 @@ It displays Realm database content in Stetho instead of SQLite database content.
 grab via Gradle:
 ```groovy
 repositories {
-    maven {
-        url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
-    }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    compile 'com.facebook.stetho:stetho:1.5.0'
-    compile 'com.uphyca:stetho_realm:2.1.0'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.github.wakwak3125:stetho-realm:2.1.3'
 }
 ```
 
-Stetho-Realm 2.0 supports Stetho 1.1 or newer and Realm 2.0.0 or newer. If you'd like to use Stetho-Realm with Realm 0.80.0 to Realm 1.2.0, please use the latest version of Realm 0.x.
+Stetho-Realm 2.0 supports Stetho 1.1 or newer and Realm 4.0.0 or newer. 
 
 ### Integration
 In your `Application` class, please initialize Stetho with `RealmInspectorModulesProvider.ProviderBuilder` as follows.

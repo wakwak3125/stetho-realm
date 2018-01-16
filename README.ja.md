@@ -7,21 +7,18 @@ Stetho がもともと持っている SQLite データベースの内容を表�
 ## Set-up
 
 ### Download
-grab via Gradle:
 ```groovy
 repositories {
-    maven {
-        url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
-    }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    compile 'com.facebook.stetho:stetho:1.5.0'
-    compile 'com.uphyca:stetho_realm:2.1.0'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.github.wakwak3125:stetho-realm:2.1.3'
 }
 ```
 
-Stetho-Realm 2.0 は、 Stetho 1.1以降、Realm 2.0.0 以降に対応しています。Realm 0.80.0 からRealm 1.2.0でStetho-Realmを使用する場合は Stetho-Realm 0.x の最新版を利用してください。
+Stetho-Realm 2.0 は、 Stetho 1.1以降、Realm 4.0.0 以降に対応しています。
 
 ### アプリケーションへの組み込み
 `Application` クラスで以下のように Stetho の初期化を行ってください。
