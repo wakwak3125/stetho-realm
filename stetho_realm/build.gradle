@@ -3,13 +3,13 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.novoda:bintray-release:0.8.0'
+//        classpath 'com.novoda:bintray-release:0.8.0'
     }
 }
 
 //noinspection GroovyAssignabilityCheck
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -47,19 +47,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
 }
 
-//noinspection GroovyAssignabilityCheck
-apply plugin: 'maven-publish'
-//noinspection GroovyAssignabilityCheck
-apply from: '../deploy.gradle'
-
-//./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
-publish {
-    userOrg = 'uphyca'
-    groupId = 'com.uphyca'
-    artifactId = 'stetho_realm'
-    version = '2.1.0'
-    description = 'Stetho-Realm is a Realm module for Stetho.'
-    website = 'https://github.com/uPhyca/stetho-realm'
-    issueTracker = 'https://github.com/uPhyca/stetho-realm/issues'
-    repository = 'https://github.com/uPhyca/stetho-realm.git'
-}
+////noinspection GroovyAssignabilityCheck
+//apply plugin: 'maven-publish'
+////noinspection GroovyAssignabilityCheck
+//apply from: '../deploy.gradle'
+//
+////./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+//publish {
+//    userOrg = 'uphyca'
+//    groupId = 'com.uphyca'
+//    artifactId = 'stetho_realm'
+//    version = '2.1.0'
+//    description = 'Stetho-Realm is a Realm module for Stetho.'
+//    website = 'https://github.com/uPhyca/stetho-realm'
+//    issueTracker = 'https://github.com/uPhyca/stetho-realm/issues'
+//    repository = 'https://github.com/uPhyca/stetho-realm.git'
+//}
