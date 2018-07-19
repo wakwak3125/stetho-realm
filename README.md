@@ -19,7 +19,7 @@ dependencies {
 }
 ```
 
-Stetho-Realm 2.0 supports Stetho 1.1 or newer and Realm .0.0 or newer. 
+Stetho-Realm 2.0 supports Stetho 1.1 or newer and Realm 5.0.0 or newer. 
 
 ### Integration
 In your `Application` class, please initialize Stetho with `RealmInspectorModulesProvider.ProviderBuilder` as follows.
